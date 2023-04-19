@@ -57,14 +57,10 @@ const generateHTMLPortfolio = (userInput) =>
         <h2 class="cover-subheading">I am based in ${userInput.location}</h2>
         <p class="lead">${userInput.bio}</p>
         <p class="lead">
-        // ! NEED FIXING ! //
-          <a href="#" class="btn btn-lg btn-secondary">My ${userInput.gitHub}</a>
-        // ! NEED FIXING ! //
-          <a href="#" class="btn btn-lg btn-secondary">My ${userInput.linkedIn}</a>
+          <a href="https://www.linkedin.com/in/${userInput.linkedin}" class="btn btn-lg btn-secondary">GitHub Link!</a>
+          <a href="https://github.com/${userInput.github}" class="btn btn-lg btn-secondary">Linkedin Link!</a>
         </p>
       </main>
     </div>
   </body>
 </html>`;
-
-// console.log(Response);

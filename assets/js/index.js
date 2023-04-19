@@ -21,12 +21,12 @@ inquirer
     {
       type: "input",
       name: "linkedin",
-      message: "What is your LinkedIn URL?",
+      message: "What is your LinkedIn username?",
     },
     {
       type: "input",
       name: "github",
-      message: "What is your GitHub profile URL?",
+      message: "What is your GitHub profile username?",
     },
   ])
   .then((userInput) => {

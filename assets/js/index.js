@@ -1,42 +1,46 @@
-const inquirer = require('inquirer');
-const fs = require('fs');
+const inquirer = require("inquirer");
+const fs = require("fs");
 
-inquirer.prompt([
+inquirer
+  .prompt([
     {
-        type: 'input',
-        name: 'name',
-        message: 'What is your name?',
+      type: "input",
+      name: "name",
+      message: "What is your name?",
     },
     {
-        type: 'input',
-        name: 'location',
-        message: 'What is your location?',
+      type: "input",
+      name: "location",
+      message: "What is your location?",
     },
     {
-        type: 'input',
-        name: 'bio',
-        message: 'Write a short bio about yourself.',
-    },    
-    {
-        type: 'input',
-        name: 'linkedin',
-        message: 'What is your LinkedIn URL?',
+      type: "input",
+      name: "bio",
+      message: "Write a short bio about yourself.",
     },
     {
-        type: 'input',
-        name: 'github',
-        message: 'What is your GitHub profile URL?',
+      type: "input",
+      name: "linkedin",
+      message: "What is your LinkedIn URL?",
     },
-])
-.then((userInput) => {
+    {
+      type: "input",
+      name: "github",
+      message: "What is your GitHub profile URL?",
+    },
+  ])
+  .then((userInput) => {
     const portfolioPage = generateHTMLPortfolio(userInput);
 
-    fs.writeFile('portfolio.html', portfolioPage, (err) =>
-    err ? console.log(err): console.log("Successfully created your profile- portfolio.html"))
-})
+    fs.writeFile("portfolio.html", portfolioPage, (err) =>
+      err
+        ? console.log(err)
+        : console.log("Successfully created your profile - portfolio.html")
+    );
+  });
 
-const generateHTMLPortfolio = (userInput) => 
-`<!doctype html>
+const generateHTMLPortfolio = (userInput) =>
+  `<!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -50,16 +54,17 @@ const generateHTMLPortfolio = (userInput) =>
     <div class="cover-container d-flex h-100 p-3 mx-auto flex-column">
       <main role="main" class="inner cover">
         <h1 class="cover-heading">My name is ${userInput.name}</h1>
-        <h2 class="cover-subheading">Location</h2>
-        <p class="lead">bio</p>
+        <h2 class="cover-subheading">I am based in ${userInput.location}</h2>
+        <p class="lead">${userInput.bio}</p>
         <p class="lead">
-          <a href="#" class="btn btn-lg btn-secondary">GitHub</a>
-          <a href="#" class="btn btn-lg btn-secondary">LinkedIn</a>
+        // ! NEED FIXING ! //
+          <a href="#" class="btn btn-lg btn-secondary">My ${userInput.gitHub}</a>
+        // ! NEED FIXING ! //
+          <a href="#" class="btn btn-lg btn-secondary">My ${userInput.linkedIn}</a>
         </p>
       </main>
     </div>
   </body>
 </html>`;
 
-
-
+// console.log(Response);

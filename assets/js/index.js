@@ -49,7 +49,7 @@ const generateHTMLPortfolio = (userInput) =>
   <body class="text-center">
     <div class="cover-container d-flex h-100 p-3 mx-auto flex-column">
       <main role="main" class="inner cover">
-        <h1 class="cover-heading">Name</h1>
+        <h1 class="cover-heading">My name is ${userInput.name}</h1>
         <h2 class="cover-subheading">Location</h2>
         <p class="lead">bio</p>
         <p class="lead">
